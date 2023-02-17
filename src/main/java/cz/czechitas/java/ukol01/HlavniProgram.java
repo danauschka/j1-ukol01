@@ -11,6 +11,31 @@ public class HlavniProgram {
         zofka.turnLeft(90);
         nakresliPrasatko();
 
+        zofka.turnLeft(30);
+        zofka.penUp();
+        zofka.move(300);
+        zofka.turnLeft(90);
+        zofka.move(400);
+        zofka.penDown();
+
+        nakresliOsmiuhelnik();
+
+        zofka.penUp();
+        zofka.turnRight(180);
+        zofka.move(200);
+        zofka.penDown();
+
+        nakresliKolecko();
+
+        zofka.penUp();
+        zofka.move(200);
+        zofka.penDown();
+
+        nakresliSlunicko();
+
+
+
+
         //TODO implementace domácího úkolu
     }
 
@@ -57,6 +82,34 @@ public class HlavniProgram {
         zofka.turnRight(120);
         zofka.penDown();
         zofka.move(35);
+    }
+
+    private void nakresliOsmiuhelnik() {
+        for (int i = 0; i < 8; i++) {
+            zofka.move(50);
+            zofka.turnLeft(45);
+        }
+    }
+
+    private void nakresliKolecko() {
+        for (int i = 0; i < 36; i++) {
+            zofka.move(10);
+            zofka.turnRight(10);
+        }
+    }
+
+    private void nakresliSlunicko() {
+        for (int i = 0; i < 12; i++) {
+            zofka.move(35);
+            zofka.turnRight(40);
+            zofka.turnLeft(100);
+            zofka.move(40);
+            zofka.turnLeft(180);
+            zofka.move(40);
+            zofka.turnLeft(90);
+
+
+        }
     }
 
     public static void main(String[] args) {

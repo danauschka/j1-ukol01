@@ -15,7 +15,7 @@ public class HlavniProgram {
         zofka.move(220);
         zofka.penDown();
 
-        nakresliMaleSlunicko();
+        drawSmallSun();
 
         zofka.penUp();
         zofka.turnLeft(180);
@@ -25,7 +25,7 @@ public class HlavniProgram {
         zofka.turnRight(90);
         zofka.penDown();
 
-        nakresliDomecky();
+        drawHouses();
 
         zofka.penUp();
         zofka.turnLeft(180);
@@ -35,14 +35,14 @@ public class HlavniProgram {
         zofka.turnRight(90);
         zofka.penDown();
 
-        nakresliDomecek();
+        drawHouse();
 
         zofka.penUp();
         zofka.turnRight(45);
         zofka.move(300);
         zofka.penDown();
 
-        nakresliPrasatko();
+        drawPiggy();
 
         zofka.penUp();
         zofka.turnLeft(210);
@@ -52,38 +52,17 @@ public class HlavniProgram {
         zofka.turnRight(90);
         zofka.penDown();
 
-        nakresliDomecek();
+        drawHouse();
 
         zofka.penUp();
         zofka.turnLeft(45);
         zofka.move(450);
         zofka.turnLeft(180);
-        zofka.penDown();
-
-        nakresliD();
-
-        zofka.penUp();
-        zofka.turnRight(170);
-        zofka.move(200);
-        zofka.penDown();
-
-        nakresliA();
-
-        zofka.penUp();
-        zofka.turnLeft(70);
-        zofka.move(100);
-        zofka.penDown();
-
-        nakresliN();
-
-        zofka.turnLeft(90);
-        zofka.move(100);
-        zofka.penDown();
 
 
-        nakresliA();
+        drawName();
 
-        /*
+        /* Reseni casti 1 a 2 (nakresleni obrazcu a slunicka)
         zofka.turnLeft(90);
         nakresliPrasatko();
 
@@ -113,40 +92,30 @@ public class HlavniProgram {
         //TODO implementace domácího úkolu
     }
 
-    private void nakresliPrasatko() {
-        for (int i = 0; i < 2; i++) {
-            zofka.move(120);
-            zofka.turnLeft(90);
-            zofka.move(100);
-            zofka.turnLeft(90);
-        }
-            zofka.penUp();
-            zofka.move(120);
-            zofka.penDown();
+    private void drawPiggy() {
+        drawHouse();
 
-            nakresliTrojuhelnik();
+        zofka.turnRight(15);
 
-            zofka.turnRight(15);
+        drawLegs();
 
-            nakresliNohy();
+        zofka.turnRight(60);
+        zofka.penUp();
+        zofka.move(120);
+        zofka.penDown();
+        zofka.turnRight(60);
 
-            zofka.turnRight(60);
-            zofka.penUp();
-            zofka.move(120);
-            zofka.penDown();
-            zofka.turnRight(60);
-
-            nakresliNohy();
+        drawLegs();
     }
 
-    private void nakresliTrojuhelnik() {
+    private void drawTriangle() {
         zofka.turnLeft(45);
         zofka.move(70);
         zofka.turnLeft(90);
         zofka.move(70);
     }
 
-    private void nakresliNohy() {
+    private void drawLegs() {
 
         zofka.move(35);
         zofka.turnRight(120);
@@ -157,21 +126,21 @@ public class HlavniProgram {
         zofka.move(35);
     }
 
-    private void nakresliOsmiuhelnik() {
+    private void drawOctagon() {
         for (int i = 0; i < 8; i++) {
             zofka.move(50);
             zofka.turnLeft(45);
         }
     }
 
-    private void nakresliKolecko() {
+    private void drawCircle() {
         for (int i = 0; i < 36; i++) {
             zofka.move(10);
             zofka.turnRight(10);
         }
     }
 
-    private void nakresliSlunicko() {
+    private void drawSun() {
         for (int i = 0; i < 12; i++) {
             zofka.move(35);
             zofka.turnRight(40);
@@ -182,35 +151,20 @@ public class HlavniProgram {
             zofka.turnLeft(90);
         }
     }
+    private void drawSmallSun() {
+        for (int i = 0; i < 12; i++) {
+            zofka.move(15);
+            zofka.turnLeft(75);
+            zofka.move(20);
+            zofka.penUp();
+            zofka.turnLeft(180);
+            zofka.move(20);
+            zofka.penDown();
+            zofka.turnLeft(75);
+        }
+    }
 
-    /*
-    private void nakresliMaleSlunicko() {
-        for (int i = 0; i < 12; i++) {
-            zofka.move(15);
-            zofka.turnRight(40);
-            zofka.turnLeft(100);
-            zofka.move(20);
-            zofka.penUp();
-            zofka.turnLeft(180);
-            zofka.move(20);
-            zofka.penDown();
-            zofka.turnLeft(90);
-        }
-    }
-    */
-    private void nakresliMaleSlunicko() {
-        for (int i = 0; i < 12; i++) {
-            zofka.move(15);
-            zofka.turnLeft(75);
-            zofka.move(20);
-            zofka.penUp();
-            zofka.turnLeft(180);
-            zofka.move(20);
-            zofka.penDown();
-            zofka.turnLeft(75);
-        }
-    }
-    private void nakresliObdelnik() {
+    private void drawRectangle() {
         for (int i = 0; i < 2; i++) {
             zofka.move(120);
             zofka.turnLeft(90);
@@ -219,17 +173,17 @@ public class HlavniProgram {
         }
     }
 
-    private void nakresliDomecek() {
-            nakresliObdelnik();
-            zofka.penUp();
-            zofka.move(120);
-            zofka.penDown();
-            nakresliTrojuhelnik();
+    private void drawHouse() {
+        drawRectangle();
+        zofka.penUp();
+        zofka.move(120);
+        zofka.penDown();
+        drawTriangle();
     }
 
-    private void nakresliDomecky() {
+    private void drawHouses() {
         for (int i = 0; i < 5; i++) {
-            nakresliDomecek();
+            drawHouse();
             zofka.turnLeft(45);
             zofka.penUp();
             zofka.move(120);
@@ -240,16 +194,21 @@ public class HlavniProgram {
         }
     }
 
-    private void nakresliD() {
+    private void drawD() {
+        zofka.penDown();
         zofka.move(250);
         zofka.turnRight(90);
         for (int i = 0; i < 21; i++) {
             zofka.move(20);
             zofka.turnRight(9);
         }
+        zofka.penUp();
+        zofka.turnRight(170);
+        zofka.move(200);
     }
 
-    private void nakresliA() {
+    private void drawA() {
+        zofka.penDown();
         zofka.turnLeft(70);
         zofka.move(250);
         zofka.turnRight(140);
@@ -260,10 +219,13 @@ public class HlavniProgram {
         zofka.move(85);
         zofka.turnRight(70);
         zofka.move(125);
+        zofka.penUp();
+        zofka.turnLeft(70);
+        zofka.move(100);
     }
 
-    private void nakresliN() {
-
+    private void drawN() {
+        zofka.penDown();
         zofka.turnLeft(90);
         zofka.move(250);
         zofka.turnRight(150);
@@ -273,8 +235,16 @@ public class HlavniProgram {
         zofka.penUp();
         zofka.turnRight(180);
         zofka.move(250);
+        zofka.turnLeft(90);
+        zofka.move(100);
     }
 
+    private void drawName() {
+        drawD();
+        drawA();
+        drawN();
+        drawA();
+    }
         public static void main(String[] args) {
             new HlavniProgram().start();
         }
